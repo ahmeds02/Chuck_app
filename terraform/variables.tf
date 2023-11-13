@@ -1,11 +1,10 @@
-# variables.tf
 
 variable "docker_host" {
   description = "The address of the Docker host"
   type        = string
 }
 
-variable "docker_image_name" {
+variable "chuck_image" {
   description = "The name of the Docker image for the Chuck Norris app"
   type        = string
 }

@@ -31,11 +31,11 @@ Before getting started, ensure you have the following installed:
 
 1. Build the Docker image for the Chuck Norris App:
    ```bash
-   docker build -t your-docker-image ./docker
+   docker build -t chuck-image ./docker
 Run the Docker container:
 bash
 Copy code
-docker run -d -p 5000:5000 --name chuck-norris-app your-docker-image
+docker run -d -p 5000:5000 --name chuck-norris-app chuck-image
 Ansible
 Update the inventory file (ansible/inventory.ini) with your server details.
 

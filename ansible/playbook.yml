@@ -1,31 +1,27 @@
-- name: Deploy Chuck Norris Jokes App
-  hosts: your_servers
+---
+- name: Deploy Chuck Jokes App
+  hosts: localhost
   become: yes
-
   tasks:
     - name: Update package cache
-      apk:
+      apt:
         update_cache: yes
-      become: yes
 
     - name: Install Docker
-      apk:
-        name: docker
+      apt:
+        name: docker.io
         state: present
-      become: yes
 
     - name: Pull Docker image
       docker_image:
         name: chuck-image
         source: pull
-      become: yes
 
     - name: Run Docker container
       docker_container:
-        name: chuck-norris-app
+        name: chuck-app
         image: chuck-image
         state: started
         restart_policy: always
         ports:
           - "5000:5000"
-      become: yes
