@@ -29,31 +29,26 @@ Before getting started, ensure you have the following installed:
 
 ### Docker
 
-1. Build the Docker image for the Chuck Norris App:
-   ```bash
-   docker build -t chuck-image ./docker
+Build the Docker image for the Chuck Norris App:
+docker build -t chuck-image ./docker
+
 Run the Docker container:
-bash
-Copy code
 docker run -d -p 5000:5000 --name chuck-norris-app chuck-image
+
 Ansible
 Update the inventory file (ansible/inventory.ini) with your server details.
 
 Run the Ansible playbook:
-
-bash
-Copy code
 ansible-playbook -i ansible/inventory.ini ansible/playbook.yml
+
 Terraform
 Update the Terraform variables in terraform/terraform.tfvars with your configuration.
 
 Deploy the infrastructure:
-
-bash
-Copy code
 cd terraform
 terraform init
 terraform apply
+
 Usage
 Access the Chuck Norris Jokes App at http://localhost:5000 or the URL provided by the Terraform output.
 
